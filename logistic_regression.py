@@ -14,7 +14,7 @@ class LogisticRegression:
         m, n = x.shape
         self.w = np.zeros(n)
         self.b = 0
-
+    
         y_pred = self.sigmoid(x@self.w + self.b)
         errors = y_pred - y
         dw = (1/m) * (x.T@errors)
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     lr = 1e-5
     print(lr)
     X = random.randint(0,100, (4,2))
-    y = random.randint(0, 1, (4))
+    y = random.randint(0, 2, (4))
 
     model = LogisticRegression(lr)
     model.fit(X, y)
